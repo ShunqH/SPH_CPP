@@ -1,4 +1,4 @@
-# 变量定义
+# define
 CXX = g++
 CXXFLAGS = -Wall -std=c++11
 INCLUDES = -I./include
@@ -8,32 +8,32 @@ OBJ_DIR = ./obj
 BIN_DIR = ./bin
 TARGET = $(BIN_DIR)/sod.sph
 
-# 获取所有源文件 (.cpp 文件)
+# obtain source files (.cpp files)
 SRCS = $(wildcard $(SRC_DIR)/*.cpp)
 
-# 自动生成对象文件 (.o 文件)
+# create object files (.o 文件)
 OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-# 目标
+# target
 all: $(TARGET)
 
-# 编译规则
+# compile rules
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp | $(OBJ_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
 
-# 链接规则
+# cbain rule
 $(TARGET): $(OBJS) | $(BIN_DIR)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(TARGET)
 
-# 清理中间文件
+# clean 
 clean:
 	rm -rf $(OBJ_DIR)/*.o $(TARGET)
 
-# 创建 obj 目录（如果不存在）
+# create obj directory (if not exist)
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 
-# 创建 bin 目录（如果不存在）
+# create bin directory (if not exist)
 $(BIN_DIR):
 	mkdir -p $(BIN_DIR)
 
