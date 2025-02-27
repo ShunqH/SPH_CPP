@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <cmath>
 #include "force.h"
 #include "index.h"
 #include "dens.h" 
