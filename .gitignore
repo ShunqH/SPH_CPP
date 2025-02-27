@@ -1,4 +1,4 @@
-./bin/*
+bin/*
 *png
 *pdf
 *.o
