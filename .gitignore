@@ -1,5 +1,6 @@
-bin/*
+bin/
 *output*
-*png
-*pdf
+*.ipynb
+*.png
+*.pdf
 *.o
