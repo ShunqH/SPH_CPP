@@ -37,6 +37,7 @@ int main(int argc, char* argv[]){
         t = t+dt; 
         step++; 
         if (step%interval == 0){
+            cout<<"t = "<< t <<endl; 
             WriteParticles(particles, step/interval); 
         }    
     }

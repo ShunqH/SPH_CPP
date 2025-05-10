@@ -47,26 +47,10 @@ void GetAccel(std::vector<std::vector<double>>& particles, int nghost){
             acc += - particles[b][MAS]*
                     (((particles[a][PRE]+qa)/(particles[a][DEN]*particles[a][DEN]))*wha 
                     +((particles[b][PRE]+qb)/(particles[b][DEN]*particles[b][DEN]))*whb); 
-
-            // if (particles[a][X1]>-0.01 && particles[a][X1]<0 && particles[b][X1]>-0.01 && particles[b][X1]<0 ){
-            //     cout<<particles[a][X1]<<" "
-            //     <<acc<<" "
-            //     <<((particles[b][PRE]+qb)/(particles[b][DEN]*particles[b][DEN]))*whb<<" "
-            //     <<particles[b][DEN]<<" "
-            //     // <<((particles[b][PRE]+qb)/(particles[b][DEN]*particles[b][DEN]))*whb<<" "
-            //     <<qb<<" "
-            //     <<whb<<" "
-            //     <<endl;
-            // }
             accu += particles[b][MAS]
                     *((particles[a][PRE]+qa)/(particles[a][DEN]*particles[a][DEN]))
                     *(particles[a][VEL1]-particles[b][VEL1])*wha ; 
         }
-        // if (acc<0.01){
-        //     cout<<particles[a][X1]<<" "
-        //     <<particles[a][PRE]<<" "
-        //     <<endl;
-        // }
         particles[a][ACC1] = acc; 
         particles[a][ACCU] = accu; 
     }
